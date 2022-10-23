@@ -22,14 +22,20 @@ app.get('/futuro', (req, res) => {
     res.render(`futuro`,{
       title:"MY FUTURE",
       date:"Enero, 01, 2030",
-      description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.",
-      descriptionTwo:"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui:",
-      descriptionThree:"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui."
+      description:"Mi nombre es Diego Alexander Parra Calderón aspiro a muchas cosas, quiero llegar a vivir de la programación me gusta tanto el backend como el fronend consideró que me desempeño bien en las dos áreas, en estos momentos quiero terminar el tecnólogo para el otro año entrar a la universidad y homologar la carrera, una vez termine la universidad me gustaría ir a trabajar a otro país o de ser posible me gustaría estudiar y trabajar en otro país.",
+      descriptionTwo:"Quiero especializarme en las dos áreas tanto en backend y en fronend, me gustaría estudiar en países como Canadá o suiza, en un futuro me gustaría ir a vivir a otro país y me gustaría desempeñarme en empresas como Google, Facebook o Apple.",
+      descriptionThree:"Luego de ya tener mis estudios completos me gustaría invertir en empresas o montar una, también me gustaría ser socio de una de las grandes empresas."
     })
 })
 
 app.get('/work', (req, res) => {
     res.render(`work`)
+})
+
+app.use((req, res, next) => {
+  res.status(404).render(`404`,{
+    direccionErronea:"Dirección erronea pagina no encontrada"
+  })
 })
 
 app.listen(port, () => {
