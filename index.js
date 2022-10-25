@@ -7,6 +7,8 @@ app.set('view engine', 'ejs')
 app.use(express.static('public'))
 
 app.use('/', require('./routes/rutas'));
+app.use('/futuro', require('./routes/rutas'));
+app.use('/work', require('./routes/rutas'));
 
 app.use((req, res, next) => {
   res.status(404).render(`404`,{
