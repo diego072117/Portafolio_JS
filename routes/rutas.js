@@ -28,8 +28,4 @@ router.get('/work', (req, res) => {
     res.render(`work`)
 })
 
-
-
-
-
 module.exports = router;
